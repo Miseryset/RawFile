@@ -1,6 +1,16 @@
+if [ ! -e ${START_DIR}/kr-script/ffmpeg ]; then
+  wget -O kr-script/ffmpeg.zip https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/ffmpeg.zip
+  if [ -f ${START_DIR}/kr-script/ffmpeg.zip ] ; then
+    unzip -o "${START_DIR}/kr-script/ffmpeg.zip" "ffmpeg/*" -d "${START_DIR}/kr-script" >/dev/null 2>&1
+    chmod -R 777 "${START_DIR}/kr-script/ffmpeg"
+  else
+    echo "下载错误"
+    exit 1
+  fi
+fi
 
-export PATH=${PATH}:"/data/adb/ffmpeg"
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:"/data/adb/ffmpeg/libs"
+export PATH=${PATH}:"${START_DIR}/kr-script/ffmpeg"
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:"${START_DIR}/kr-script/ffmpeg/libs"
 
 #bili_down="/sdcard/Android/data/tv.danmaku.bili/download"
 #output_dir="/sdcard/Document"
