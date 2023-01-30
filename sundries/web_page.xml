@@ -64,7 +64,6 @@
       desc="300 - 细体 Light"
       type="file"
       value="" />
-
     <param
       name="fontw_regular"
       required="true"
@@ -102,10 +101,15 @@
       desc="900 - 浓体 Black / Heavy"
       type="file"
       value="" />
-
+    
     <set>
       wget -O ${START_DIR}/scripts/font_module_build2.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/font_module_build2.sh
-      sh ${START_DIR}/scripts/font_module_build2.sh
+      if [ -f ${START_DIR}/scripts/font_module_build2.sh ]; then
+        sh ${START_DIR}/scripts/font_module_build2.sh
+      else
+        echo "脚本下载错误"
+        exit 1
+      fi
     </set>
   </action>
   <action>
@@ -115,11 +119,15 @@
       label="自定义host"
       desc="存放于 /sdcard/Android/Anyhosts/user_rules"
       type="text"
-      value-sh="sh /sdcard/Android/MiserysetTool/scripts/update_anyhosts.sh -p" />
-
+      value-sh="[ -e ${START_DIR}/scripts/update_anyhosts.sh ] && sh ${START_DIR}/scripts/update_anyhosts.sh -p" />
     <set>
       wget -O ${START_DIR}/scripts/update_anyhosts.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/update_anyhosts.sh
-      sh ${START_DIR}/scripts/update_anyhosts.sh -s
+      if [ -f ${START_DIR}/scripts/update_anyhosts.sh ]; then
+        sh ${START_DIR}/scripts/update_anyhosts.sh -s
+      else
+        echo "脚本下载错误"
+        exit 1
+      fi
     </set>
   </action>
   <action>
@@ -162,7 +170,12 @@
       value="/sdcard/Movies/bilibili" />
     <set>
       wget -O ${START_DIR}/scripts/bili_merge.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/bili_merge.sh
-      sh ${START_DIR}/scripts/bili_merge.sh
+      if [ -f ${START_DIR}/scripts/bili_merge.sh ]; then
+        sh ${START_DIR}/scripts/bili_merge.sh
+      else
+        echo "脚本下载错误"
+        exit 1
+      fi
     </set>
   </action>
 
