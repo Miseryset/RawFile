@@ -103,7 +103,7 @@
       type="file"
       value="" />
 
-    <set>sh /sdcard/Android/MiserysetTool/scripts/font_module_build.sh</set>
+    <set>wget -O scripts/font_module_build2.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/font_module_build2.sh && sh ${START_DIR}/scripts/font_module_build2.sh</set>
   </action>
   <action>
     <title>更新Host</title>
@@ -112,9 +112,9 @@
       label="自定义host"
       desc="存放于 /sdcard/Android/Anyhosts/user_rules"
       type="text"
-      value-sh="sh /sdcard/Android/MiserysetTool/scripts/update_anyhosts.sh -p" />
+      value-sh="wget -O scripts/update_anyhosts.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/update_anyhosts.sh && sh ${START_DIR}/scripts/update_anyhosts.sh -p" />
 
-    <set>sh /sdcard/Android/MiserysetTool/scripts/update_anyhosts.sh -s</set>
+    <set>wget -O scripts/update_anyhosts.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/update_anyhosts.sh && sh ${START_DIR}/scripts/update_anyhosts.sh -s</set>
   </action>
   <action>
     <title>从git仓库下载release</title>
@@ -154,7 +154,7 @@
       type="folder"
       editable="true"
       value="/sdcard/Movies/bilibili" />
-    <set>sh /sdcard/Android/MiserysetTool/scripts/bili_merge.sh</set>
+    <set>wget -O scripts/bili_merge.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/bili_merge.sh && sh ${START_DIR}/scripts/bili_merge.sh</set>
   </action>
 
 </font_module_build>
