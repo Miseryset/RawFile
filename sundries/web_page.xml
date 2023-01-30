@@ -157,10 +157,4 @@
     <set>sh /sdcard/Android/MiserysetTool/scripts/bili_merge.sh</set>
   </action>
 
-  <group title="网络页面">
-    <page
-      before-read="wget -O /sdcard/Android/MiserysetTool/web_page.xml https://raw.githubusercontent.com/Miseryset/kr-scripts/main/pio/src/main/assets/layouts/font_module_build.xml"
-      config-sh="echo '/sdcard/Android/MiserysetTool/web_page.xml'"
-      title="测试" />
-  </group>
 </font_module_build>
