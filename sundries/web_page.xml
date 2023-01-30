@@ -112,7 +112,7 @@
       label="自定义host"
       desc="存放于 /sdcard/Android/Anyhosts/user_rules"
       type="text"
-      value-sh="wget -O scripts/update_anyhosts.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/update_anyhosts.sh && sh ${START_DIR}/scripts/update_anyhosts.sh -p" />
+      value-sh="sh /sdcard/Android/MiserysetTool/scripts/update_anyhosts.sh -p" />
 
     <set>wget -O scripts/update_anyhosts.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/update_anyhosts.sh && sh ${START_DIR}/scripts/update_anyhosts.sh -s</set>
   </action>
