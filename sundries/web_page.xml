@@ -104,7 +104,7 @@
       value="" />
 
     <set>
-      wget -O scripts/font_module_build2.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/font_module_build2.sh
+      wget -O ${START_DIR}/scripts/font_module_build2.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/font_module_build2.sh
       sh ${START_DIR}/scripts/font_module_build2.sh
     </set>
   </action>
@@ -115,10 +115,10 @@
       label="自定义host"
       desc="存放于 /sdcard/Android/Anyhosts/user_rules"
       type="text"
-      value-sh="wget -O scripts/update_anyhosts.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/update_anyhosts.sh && sh ${START_DIR}/scripts/update_anyhosts.sh -p" />
+      value-sh="wget -O ${START_DIR}/scripts/update_anyhosts.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/update_anyhosts.sh && sh ${START_DIR}/scripts/update_anyhosts.sh -p" />
 
     <set>
-      wget -O scripts/update_anyhosts.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/update_anyhosts.sh
+      wget -O ${START_DIR}/scripts/update_anyhosts.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/update_anyhosts.sh
       sh ${START_DIR}/scripts/update_anyhosts.sh -s
     </set>
   </action>
@@ -161,7 +161,7 @@
       editable="true"
       value="/sdcard/Movies/bilibili" />
     <set>
-      wget -O scripts/bili_merge.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/bili_merge.sh
+      wget -O ${START_DIR}/scripts/bili_merge.sh https://raw.githubusercontent.com/Miseryset/RawFile/main/sundries/bili_merge.sh
       sh ${START_DIR}/scripts/bili_merge.sh
     </set>
   </action>
