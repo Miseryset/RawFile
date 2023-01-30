@@ -3,6 +3,7 @@ if [ ! -e ${START_DIR}/kr-script/ffmpeg ]; then
   if [ -f ${START_DIR}/kr-script/ffmpeg.zip ] ; then
     unzip -o "${START_DIR}/kr-script/ffmpeg.zip" "ffmpeg/*" -d "${START_DIR}/kr-script" >/dev/null 2>&1
     chmod -R 777 "${START_DIR}/kr-script/ffmpeg"
+    rm ${START_DIR}/kr-script/ffmpeg.zip
   else
     echo "下载错误"
     exit 1
